@@ -16,7 +16,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#f8e962] to-[#2e2e2e]">
         <div className="layout">
           <h1 className="text-2xl text-white">My t3-stack playground app</h1>
-          <div className="text-white">
+          <div className="text-xl text-white">
             {!isSignedIn && <SignInButton />}
             {isSignedIn && <SignOutButton />}
           </div>
