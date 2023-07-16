@@ -14,16 +14,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#353535] to-[#2e2e2e]">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 "></div>
-        <h1 className="text-2xl text-white">My t3-stack playground app</h1>
-        <div className="text-white">
-          {!isSignedIn && <SignInButton />}
-          {isSignedIn && <SignOutButton />}
-        </div>
-        <div className="text-white">
-          {data?.map((post) => (
-            <div key={post.id}>{post.content}</div>
-          ))}
+        <div className="layout">
+          <h1 className="text-2xl text-white">My t3-stack playground app</h1>
+          <div className="text-white">
+            {!isSignedIn && <SignInButton />}
+            {isSignedIn && <SignOutButton />}
+          </div>
+          <div className="text-white">
+            {data?.map((post) => (
+              <div key={post.id}>{post.content}</div>
+            ))}
+          </div>
         </div>
       </main>
     </>
