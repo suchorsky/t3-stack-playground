@@ -3,8 +3,9 @@ import Head from "next/head";
 import { api } from "~/utils/api";
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { data } = api.posts.getAll.useQuery();
   const { isSignedIn } = useUser();
+  console.log(data);
   return (
     <>
       <Head>
@@ -18,6 +19,11 @@ export default function Home() {
         <div className="text-white">
           {!isSignedIn && <SignInButton />}
           {isSignedIn && <SignOutButton />}
+        </div>
+        <div className="text-white">
+          {data?.map((post) => (
+            <div key={post.id}>{post.content}</div>
+          ))}
         </div>
       </main>
     </>
