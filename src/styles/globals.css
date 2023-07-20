@@ -11,4 +11,5 @@
 
 body {
   @apply text-white;
+  @apply bg-neutral-900;
 }
